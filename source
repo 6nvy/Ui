@@ -168,7 +168,7 @@ function lib:Window(text, preset, closebind)
     TabFolder.Name = "TabFolder"
     TabFolder.Parent = Main
 
-    function TabLibrary.ToggleUI(bool)
+    function tabcontent.ToggleUI(bool)
         bool = type(bool) == 'boolean' and bool or not ui.Enabled
         ui.Enabled = bool
     end
@@ -1618,7 +1618,7 @@ function lib:Window(text, preset, closebind)
             Bind.MouseButton1Click:Connect(
                 function()
                     BindText.Text = "..."
-                    binding = true  
+                    binding = true
                     local inputwait = game:GetService("UserInputService").InputBegan:wait()
                     if inputwait.KeyCode.Name ~= "Unknown" then
                         BindText.Text = inputwait.KeyCode.Name
